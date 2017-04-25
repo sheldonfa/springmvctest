@@ -1,0 +1,12 @@
+demo8:springmvc的拦截器
+
+技术点：
+1、在springmvc.xml中配置拦截器
+
+2、实现接口HandlerInterceptor，还有三个方法：preHandler,postHandler,afterCompletion
+
+关键：
+
+1、preHandler返回true，afterCompletion必执行
+
+2、两个拦截器，执行顺序很重要
