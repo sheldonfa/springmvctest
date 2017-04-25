@@ -1,0 +1,10 @@
+demo2主要查看SimpleUrlHandlerMaping这个映射器的作用。
+技术点：
+
+1、SimpleUrlHandlerMaping这个处理器映射器可以将url映射集中管理
+
+心得：
+
+1、BeanNameUrlHandlerMapping可以多个url映射到一个Controller上吗？
+
+   答：可以

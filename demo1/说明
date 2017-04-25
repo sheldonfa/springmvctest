@@ -1,0 +1,31 @@
+demo1主要是基本的springmvc可以跑起来。
+技术点：
+1、编写了一个自定义Controller Test并实现了handleRequest方法，返回一个index.jsp视图
+
+2、想让这个自定义Controller运行，需要再springmvc.xml中配置为bean。
+    由于默认是BeanNameUrlHandlerMapping映射器，所以bean的name属性就是访问入口。
+
+3、为了让自定义Controller中的ViewName找到正确的视图位置，
+    在springmvc中显示配置的视图解析器InternalResourceViewResolver
+
+4、为了让springmvc框架可以运行，需要将其在web.xml中配置为servlet。
+    其中contextConfigLocation是springmvc配置文件所在位置，是否配置这个属性是由讲究的。
+
+5、将springmvc的servlet-mapping配置成*.html是一种伪静态的做法。
+
+爬坑介绍：
+
+1、引入自定义Controller的requestHandler的参数HttpServletRequest时候，项目启动报错，错误内容与tomcat有关。
+
+   原因：与tomcat中有这个jar包冲突。因为用的idea自动引入，并不会加<scope>provided</scope>。
+   解决：将<groupId>javax.servlet</groupId>定义成provided。
+        意思是：打成war包的时候，这个jar包不包含。
+
+2、不想为每个项目配置tomcat插件，不知道放在父model中是否有效。
+    答：有效
+
+3、父model创建的时候也有src，不知道删除了行不行
+    答：删了行，现在的parent就剩下一个pom.xml了
+
+4、el表达式不好使，${hello}原样输出到页面
+    原因：没有引入taglib的c标签库，引入之后，还需要maven包，引入对应jar包

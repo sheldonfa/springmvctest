@@ -1,0 +1,9 @@
+demo3:ControllerClassNameHandlerMapping处理器映射器的作用。
+
+技术点：
+1、可以根据类名+后缀名，如：test.html作为url映射路径访问对应的Controller，不用自己起名字了
+
+心得：
+1、那是不是就不用在为Controller配置bean了？
+
+   答：不是，bean还是要配置的，例如：<bean class="com.Test"/>，只是不用起名字了。

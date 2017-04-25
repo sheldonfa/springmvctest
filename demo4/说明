@@ -1,0 +1,12 @@
+demo4:HttpRequestHandlerAdapter处理器适配器的作用。
+
+技术点：
+1、HttpRequestHandlerAdapter处理实现HttpRequestHandler的Controller，这种方式更象servlet，更原始。
+
+2、不是默认处理器适配器，需要再springmvc.xml中配置
+    <bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>
+
+爬坑：
+1、ControllerClassNameHandlerMapping映射器，不能与HttpRequestHandlerAdapter适配器共同使用
+
+   感觉：映射器和适配器是配套使用的。如果上述这么使用，会报错：找不到test2.html
