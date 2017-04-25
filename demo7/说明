@@ -1,0 +1,13 @@
+demo7:oscache页面缓存技术
+
+1、引入oscache的jar
+
+2、配置oscache的filter
+
+3、如果需要持久化，引入oscache.properties配置文件
+
+爬坑：
+
+1、oscache的2.3版本比较稳定，高了貌似有问题
+
+2、对cache.memory属性还是一知半解，目前认为用内存缓存，false就是用硬盘缓存
