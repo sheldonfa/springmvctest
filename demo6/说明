@@ -1,0 +1,23 @@
+demo6:上传文件（以上传图片为例）
+
+技术点：
+
+1、配置multipartResolver，以支持多部件上传
+
+2、使用到jquery.form.js，这里对使用form的方式提交图片，并不认为很好
+
+3、使用jersey作为图片服务器
+
+5、需要jersey的mvn和common-fileupload
+
+爬坑：
+
+1、jsersey服务器，403没有权限的时候，知道要改tomcat的web.xml，但不知道在哪
+
+    答：就在这个项目的target下面
+
+2、静态资源的访问，需要在springmvc中配置mvc:resource，因为使用的restful风格，拦截了静态资源。
+    注意：<mvc:resources mapping="/js/*" location="/js/"/>中 location中的js后面的"/"是必须的
+    servlet配置/*是一种错误方式，它在返回视图时，也会拦截，简直是完蛋
+
+3、jersey的上传目录upload最好有内容，不然可能不创建这个文件夹

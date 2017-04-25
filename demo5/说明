@@ -1,0 +1,14 @@
+demo5:时间转换
+
+技术点
+
+1、initBinder自动监视Date类型，遇到后自动转换
+
+2、RequestMappingHandlerMapping和RequestMappingHandlerAdapter分别是注解映射器和注解适配器
+
+3、<context:component-scan base-package="com"/>是扫描包
+
+4、注解开发，可以配置根路径，这些都太熟了，就不单独项目学习了
+
+疑惑：
+1、这只是简单地解决一种日期转换问题，如果我的日期转换需要满足各种格式。或者更细粒度，怎么解决？
